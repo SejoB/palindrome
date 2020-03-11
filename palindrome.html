@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const palindrome = input => {
+				input = input.toLowerCase().match(/[a-z]/g)
+				let center,
+					arr = []
+				input.forEach((str, index) => {
+					input.indexOf(str) !== index ? arr.push(str) : (center = str)
+				})
+				if (arr.length === 0) {
+					return 0
+				} else if (!arr.includes(center)) {
+					let len = arr.length * 2
+					return len + 1
+				} else {
+					return arr.length * 2
+				}
+			}
+		</script>
+	</body>
+</html>
